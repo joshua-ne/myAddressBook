@@ -118,17 +118,26 @@ public class MainApp extends Application {
             AnchorPane page = (AnchorPane) loader.load();
 
             // Create the dialog Stage.
+            //System.out.println("Creating the dialog Stage");
             Stage dialogStage = new Stage();
             dialogStage.setTitle("Edit Person");
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
+            //System.out.println("Dialog Stage Created!");
+
 
             // Set the person into the controller.
+            //System.out.println("Setting the person into the controller");
+
             address.view.PersonEditDialogController controller = loader.getController();
+            //System.out.println("controller created");
             controller.setDialogStage(dialogStage);
+            //System.out.println("stage set");
             controller.setPerson(person);
+            //System.out.println("person set");
+            //System.out.println("Person set into controller");
 
             // Show the dialog and wait until the user closes it
             dialogStage.showAndWait();

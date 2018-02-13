@@ -153,7 +153,10 @@ public class PersonOverviewController {
     private void handleEditPerson() {
         Person selectedPerson = personTable.getSelectionModel().getSelectedItem();
         if (selectedPerson != null) {
+            //System.out.println("hello1");
+
             boolean okClicked = mainApp.showPersonEditDialog(selectedPerson);
+
             if (okClicked) {
                 showPersonDetails(selectedPerson);
             }
